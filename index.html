@@ -105,6 +105,7 @@ a{color:inherit}
 }
 
 /* ---------- tabs ---------- */
+.tabs-shell{position:relative}
 .tabs{
   display:flex;gap:4px;margin-top:20px;
   overflow-x:auto;scrollbar-width:none;
@@ -305,7 +306,8 @@ h3.section{
 }
 .poster-foot a{
   color:var(--court);font-weight:600;text-decoration:none;
-  border-bottom:2px solid var(--ball);
+  display:inline-flex;align-items:center;min-height:44px;
+  box-shadow:inset 0 -2px 0 var(--ball);
 }
 
 /* ---------- quiz ---------- */
@@ -440,6 +442,19 @@ h3.section{
 .foot strong{display:block;color:#fff;font-weight:800;font-stretch:112%;margin-bottom:6px;letter-spacing:.14em}
 
 /* ---------- responsive ---------- */
+/* 좁은 화면: 탭 4개가 한 줄에 들어가도록 여백·자간을 줄이고,
+   그래도 넘치는 초소형 기기(≤360px)에는 우측 페이드로 스크롤을 알린다 */
+@media (max-width:520px){
+  .masthead .wrap{padding-left:14px;padding-right:14px}
+  .tabs{margin:16px -14px 0;padding:0 14px}
+  .tab{font-size:.88rem;padding:11px 9px 15px;letter-spacing:-.01em}
+  .tabs-shell::after{
+    content:"";position:absolute;right:-14px;top:0;bottom:0;width:26px;
+    background:linear-gradient(to left,var(--court),rgba(18,35,92,0));
+    pointer-events:none;
+  }
+}
+
 @media (max-width:640px){
   .level{grid-template-columns:1fr}
   .level .badge{
@@ -470,12 +485,14 @@ h3.section{
       <h1>Dopamine <em>Tennis</em></h1>
       <span class="tagline">Play · Connect · Develop</span>
     </div>
+    <div class="tabs-shell">
     <nav class="tabs" role="tablist" aria-label="페이지">
       <button class="tab" role="tab" data-page="guide"   aria-selected="true">NTRP 기준</button>
       <button class="tab" role="tab" data-page="ntrp"    aria-selected="false">한눈에 보기</button>
       <button class="tab" role="tab" data-page="manners" aria-selected="false">테니스 매너</button>
       <button class="tab" role="tab" data-page="check"   aria-selected="false">내 NTRP는?</button>
     </nav>
+    </div>
   </div>
 </header>
 
@@ -669,7 +686,12 @@ h3.section{
   function show(name, push){
     if (PAGES.indexOf(name) < 0) name = 'guide';
     tabs.forEach(function(t){
-      t.setAttribute('aria-selected', String(t.dataset.page === name));
+      var on = (t.dataset.page === name);
+      t.setAttribute('aria-selected', String(on));
+      /* 초소형 화면에서 탭바가 넘칠 때, 선택된 탭을 보이는 위치로 */
+      if (on && t.scrollIntoView) {
+        t.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+      }
     });
     PAGES.forEach(function(p){
       var sec = document.getElementById('page-' + p);
