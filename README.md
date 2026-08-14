@@ -32,7 +32,17 @@ python3 -m http.server 8777
 
 ## 배포
 
-정적 파일만 있으므로 GitHub Pages, Vercel, Netlify 어디든 폴더째 올리면 됩니다.
+**https://phjppo0918.github.io/dopamine-tennis/**
+
+GitHub Pages(`main` 브랜치 루트)로 서비스됩니다. 빌드 단계가 없어서 `main`에 push하면 1~2분 뒤 반영됩니다.
+
+```bash
+git add -A && git commit -m "문구 수정" && git push
+```
+
+이 저장소는 `phjppo0918` 계정 토큰을 쓰도록 로컬 credential helper가 지정되어 있어, `gh` 활성 계정이 달라도 그대로 push됩니다.
+
+공유용 OG 태그의 URL은 위 주소로 하드코딩되어 있습니다. 커스텀 도메인을 붙이면 `index.html`의 `og:url`·`og:image`도 함께 바꿔주세요.
 
 ## 원본
 
