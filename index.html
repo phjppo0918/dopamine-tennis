@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>도파민 테니스 — NTRP 기준 & 매너</title>
+<meta name="description" content="도파민 테니스 NTRP 셀프 체크 기준과 코트 매너 안내.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="도파민 테니스">
+<meta property="og:title" content="도파민 테니스 — NTRP 기준 & 매너">
+<meta property="og:description" content="내 NTRP는? 5개 질문으로 확인하고, 코트 매너까지 한 번에.">
+<meta property="og:url" content="https://phjppo0918.github.io/dopamine-tennis/">
+<meta property="og:image" content="https://phjppo0918.github.io/dopamine-tennis/assets/ntrp.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='13' fill='%23C2DC2F'/><path d='M6 7a18 18 0 0 1 0 18M26 7a18 18 0 0 0 0 18' stroke='%2312235C' stroke-width='2' fill='none'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+<style>
+/* ---------- tokens ---------- */
+:root{
+  --court:#12235C;        /* deep navy — brand ground */
+  --court-deep:#0B1740;
+  --ball:#C2DC2F;         /* lime — brand accent */
+  --ball-soft:#EAF3B8;
+  --hardcourt:#E7EDF3;    /* page background: hard-court blue-gray */
+  --surface:#FFFFFF;
+  --ink:#0F1830;
+  --ink-mid:#4A5675;
+  --ink-soft:#7E88A3;
+  --hair:#DFE5EE;
+
+  --lv10:#2E3A5C;
+  --lv15:#3FA9A0;
+  --lv20:#6DBE45;
+  --lv25:#F0A03D;
+  --lv30:#E8546B;
+  --lv35:#8E6FBE;
+
+  --display:'Archivo','Pretendard Variable',Pretendard,sans-serif;
+  --body:'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+
+  --wrap:920px;
+  --r:14px;
+}
+
+/* ---------- base ---------- */
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  min-height:100vh;
+  display:flex;flex-direction:column;
+  background:var(--hardcourt);
+  color:var(--ink);
+  font-family:var(--body);
+  font-size:16px;
+  line-height:1.75;
+  word-break:keep-all;      /* 한글은 어절 단위로 줄바꿈 */
+  overflow-wrap:break-word;
+  -webkit-font-smoothing:antialiased;
+}
+main{flex:1}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ball);outline-offset:3px;border-radius:4px}
+
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px}
+
+.eyebrow{
+  font-family:var(--display);
+  font-size:.7rem;font-weight:700;
+  letter-spacing:.2em;text-transform:uppercase;
+  color:var(--ink-soft);
+  margin:0 0 10px;
+}
+
+/* ---------- masthead ---------- */
+.masthead{
+  background:var(--court);
+  color:#fff;
+  position:relative;
+  overflow:hidden;
+}
+.masthead::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:1px;
+  background:rgba(255,255,255,.14);
+  pointer-events:none;
+}
+.masthead .wrap{position:relative;z-index:1;padding-top:22px;padding-bottom:0}
+.brand{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.brand h1{
+  font-family:var(--display);
+  font-size:1.18rem;font-weight:800;
+  font-stretch:112%;
+  letter-spacing:.09em;text-transform:uppercase;
+  margin:0;
+}
+.brand h1 em{font-style:normal;color:var(--ball)}
+.brand .tagline{
+  font-family:var(--display);
+  font-size:.68rem;font-weight:500;letter-spacing:.22em;
+  text-transform:uppercase;color:rgba(255,255,255,.55);
+}
+
+/* ---------- tabs ---------- */
+.tabs{
+  display:flex;gap:4px;margin-top:20px;
+  overflow-x:auto;scrollbar-width:none;
+  position:relative;
+}
+.tabs::-webkit-scrollbar{display:none}
+.tab{
+  appearance:none;background:none;border:0;
+  font-family:var(--body);font-size:.95rem;font-weight:600;
+  color:rgba(255,255,255,.62);
+  padding:12px 16px 16px;
+  white-space:nowrap;cursor:pointer;
+  border-bottom:3px solid transparent;
+  transition:color .18s ease;
+}
+.tab:hover{color:#fff}
+.tab[aria-selected="true"]{color:#fff;border-bottom-color:var(--ball)}
+
+/* ---------- page shell ---------- */
+.page{display:none;padding:40px 0 72px}
+.page.is-active{display:block;animation:rise .34s cubic-bezier(.2,.7,.3,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+
+.lede{
+  font-size:1.08rem;line-height:1.8;color:var(--ink-mid);
+  margin:0 0 20px;max-width:56ch;
+}
+h2.title{
+  font-size:clamp(1.85rem,5.2vw,2.7rem);
+  font-weight:800;line-height:1.25;letter-spacing:-.02em;
+  margin:0 0 16px;
+}
+h3.section{
+  font-size:1.22rem;font-weight:800;letter-spacing:-.01em;
+  margin:0 0 18px;
+}
+
+.note{
+  display:flex;gap:12px;
+  background:var(--ball-soft);
+  border-left:4px solid var(--ball);
+  border-radius:0 10px 10px 0;
+  padding:14px 18px;
+  font-size:.95rem;color:#41500E;line-height:1.7;
+  margin:0 0 44px;
+}
+
+/* ---------- level cards ---------- */
+.levels{display:grid;gap:14px;margin:0 0 52px}
+.level{
+  background:var(--surface);
+  border-radius:var(--r);
+  border:1px solid var(--hair);
+  display:grid;
+  grid-template-columns:132px 1fr;
+  overflow:hidden;
+}
+.level .badge{
+  background:var(--lv);
+  color:#fff;
+  padding:22px 18px;
+  display:flex;flex-direction:column;justify-content:center;
+}
+.level .badge .num{
+  font-family:var(--display);
+  font-size:2.5rem;font-weight:700;font-stretch:112%;
+  line-height:1;letter-spacing:-.03em;
+  font-variant-numeric:tabular-nums;
+}
+.level .badge .name{
+  font-size:.92rem;font-weight:700;margin-top:6px;
+  letter-spacing:-.01em;
+}
+.level .body{padding:22px 24px}
+.level ul{margin:0;padding:0;list-style:none}
+.level li{
+  position:relative;padding-left:22px;
+  font-size:.95rem;line-height:1.7;color:var(--ink-mid);
+}
+.level li+li{margin-top:5px}
+.level li::before{
+  content:"";position:absolute;left:2px;top:.62em;
+  width:9px;height:9px;border-radius:50%;
+  background:var(--lv);opacity:.32;
+}
+.level .quote{
+  margin:16px 0 0;padding:12px 16px;
+  background:color-mix(in srgb,var(--lv) 9%,#fff);
+  border-radius:10px;
+  font-size:.95rem;font-weight:600;color:var(--lv);
+  line-height:1.6;
+}
+
+/* ---------- ladder ---------- */
+.ladder{
+  display:flex;align-items:stretch;gap:0;
+  background:var(--surface);
+  border:1px solid var(--hair);
+  border-radius:var(--r);
+  padding:20px 8px;
+  overflow-x:auto;scrollbar-width:thin;
+  margin:0 0 52px;
+}
+.rung{
+  flex:1 0 150px;
+  text-align:center;padding:0 12px;
+  position:relative;
+}
+.rung+.rung::before{
+  content:"";position:absolute;left:0;top:22px;
+  width:1px;height:34px;background:var(--hair);
+}
+.rung .n{
+  font-family:var(--display);
+  font-size:1.65rem;font-weight:700;font-stretch:112%;
+  line-height:1;color:var(--lv);
+  font-variant-numeric:tabular-nums;
+}
+.rung .t{
+  font-size:.82rem;line-height:1.5;color:var(--ink-mid);
+  margin-top:8px;
+}
+
+/* ---------- checklist (5 questions) ---------- */
+.checks{display:grid;gap:10px;margin:0 0 28px}
+.check{
+  background:var(--surface);
+  border:1px solid var(--hair);
+  border-radius:10px;
+  padding:14px 18px;
+  display:flex;gap:14px;align-items:baseline;
+  font-size:.98rem;font-weight:500;
+}
+.check .k{
+  font-family:var(--display);
+  font-size:.85rem;font-weight:700;font-stretch:112%;
+  color:var(--ball);
+  background:var(--court);
+  width:24px;height:24px;flex:none;
+  border-radius:50%;
+  display:grid;place-items:center;
+  transform:translateY(3px);
+}
+
+/* ---------- buttons ---------- */
+.btn{
+  appearance:none;border:0;cursor:pointer;
+  font-family:var(--body);font-size:1rem;font-weight:700;
+  padding:15px 26px;border-radius:999px;
+  background:var(--court);color:#fff;
+  display:inline-flex;align-items:center;gap:9px;
+  text-decoration:none;
+  transition:transform .16s ease,background .16s ease;
+}
+.btn:hover{background:var(--court-deep);transform:translateY(-1px)}
+.btn.ghost{
+  background:transparent;color:var(--court);
+  box-shadow:inset 0 0 0 2px var(--hair);
+}
+.btn.ghost:hover{background:#fff;box-shadow:inset 0 0 0 2px var(--court)}
+.btn .dot{
+  width:9px;height:9px;border-radius:50%;background:var(--ball);flex:none;
+}
+
+/* ---------- closing ---------- */
+.closing{
+  background:var(--court);
+  color:#fff;
+  border-radius:var(--r);
+  padding:32px 30px;
+  margin-top:52px;
+}
+.closing p{margin:0 0 12px;color:rgba(255,255,255,.8);line-height:1.8}
+.closing p:last-child{margin-bottom:0}
+.closing .lead{
+  font-size:1.1rem;font-weight:700;color:#fff;
+  line-height:1.7;
+}
+.closing .sign{
+  font-weight:700;color:var(--ball);
+  margin-top:18px;
+}
+
+/* ---------- poster pages ---------- */
+.poster{
+  background:var(--surface);
+  border:1px solid var(--hair);
+  border-radius:var(--r);
+  padding:14px;
+  margin-top:24px;
+}
+.poster img{border-radius:6px;margin:0 auto}
+.poster-foot{
+  display:flex;justify-content:space-between;align-items:center;
+  gap:16px;flex-wrap:wrap;
+  margin-top:14px;padding:0 6px 4px;
+  font-size:.86rem;color:var(--ink-soft);
+}
+.poster-foot a{
+  color:var(--court);font-weight:600;text-decoration:none;
+  border-bottom:2px solid var(--ball);
+}
+
+/* ---------- quiz ---------- */
+.rally{
+  background:var(--court);
+  border-radius:var(--r);
+  padding:26px 26px 22px;
+  margin:0 0 22px;
+  position:relative;overflow:hidden;
+}
+.rally-head{
+  display:flex;justify-content:space-between;align-items:baseline;
+  font-family:var(--display);
+  font-size:.72rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(255,255,255,.5);
+  margin-bottom:18px;
+}
+.rally-head strong{color:var(--ball);font-weight:700}
+.track{position:relative;height:22px;margin:0 9px}
+.track .baseline{
+  position:absolute;left:0;right:0;top:10px;height:2px;
+  background:rgba(255,255,255,.18);border-radius:2px;
+}
+.track .fill{
+  position:absolute;left:0;top:10px;height:2px;
+  background:var(--ball);border-radius:2px;
+  width:0;transition:width .42s cubic-bezier(.2,.7,.3,1);
+}
+.track .net{
+  position:absolute;left:50%;top:-2px;bottom:-2px;width:0;
+  border-left:2px dashed rgba(255,255,255,.32);
+}
+.track .ball{
+  position:absolute;top:2px;left:0;
+  width:18px;height:18px;margin-left:-9px;border-radius:50%;
+  background:var(--ball);
+  box-shadow:0 0 0 4px rgba(194,220,47,.2);
+  transition:left .42s cubic-bezier(.2,.7,.3,1);
+}
+
+.q{
+  background:var(--surface);
+  border:1px solid var(--hair);
+  border-radius:var(--r);
+  padding:30px 28px;
+}
+.q h3{
+  font-size:clamp(1.25rem,3.6vw,1.6rem);
+  font-weight:800;letter-spacing:-.02em;line-height:1.4;
+  margin:0 0 22px;
+}
+.opts{display:grid;gap:10px}
+.opt{
+  appearance:none;cursor:pointer;text-align:left;
+  font-family:var(--body);font-size:1rem;font-weight:500;color:var(--ink);
+  background:#fff;
+  border:1px solid var(--hair);
+  border-radius:11px;
+  padding:16px 18px;
+  display:flex;align-items:center;gap:14px;
+  transition:border-color .15s ease,background .15s ease,transform .12s ease;
+}
+.opt:hover{border-color:var(--court);background:#FBFCFE}
+.opt:active{transform:scale(.99)}
+.opt .mark{
+  width:20px;height:20px;flex:none;border-radius:50%;
+  border:2px solid var(--hair);
+  transition:border-color .15s ease,background .15s ease;
+}
+.opt:hover .mark{border-color:var(--ball);background:var(--ball)}
+
+.q-foot{margin-top:20px}
+.link-back{
+  appearance:none;background:none;border:0;cursor:pointer;
+  font-family:var(--body);font-size:.9rem;font-weight:600;
+  color:var(--ink-soft);padding:6px 0;
+}
+.link-back:hover{color:var(--court)}
+.link-back[hidden]{display:none}
+
+/* result */
+.result{
+  background:var(--surface);
+  border:1px solid var(--hair);
+  border-radius:var(--r);
+  overflow:hidden;
+}
+.result-hero{
+  background:var(--lv);color:#fff;
+  padding:34px 30px;
+}
+.result-hero .cap{
+  font-family:var(--display);
+  font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(255,255,255,.75);
+}
+.result-hero .num{
+  font-family:var(--display);
+  font-size:clamp(3.4rem,13vw,5.4rem);
+  font-weight:700;font-stretch:112%;line-height:.92;
+  letter-spacing:-.035em;margin:10px 0 4px;
+  font-variant-numeric:tabular-nums;
+}
+.result-hero .name{font-size:1.22rem;font-weight:700}
+.result-body{padding:26px 30px 30px}
+.result-body ul{margin:0 0 20px;padding:0;list-style:none}
+.result-body li{
+  position:relative;padding-left:22px;
+  font-size:.97rem;line-height:1.75;color:var(--ink-mid);
+}
+.result-body li::before{
+  content:"";position:absolute;left:2px;top:.65em;
+  width:9px;height:9px;border-radius:50%;
+  background:var(--lv);opacity:.32;
+}
+.result-quote{
+  padding:14px 18px;border-radius:10px;
+  background:color-mix(in srgb,var(--lv) 9%,#fff);
+  color:var(--lv);font-weight:700;font-size:1rem;line-height:1.6;
+  margin:0 0 22px;
+}
+.result-body .note{margin-bottom:22px;font-size:.9rem}
+.result-actions{display:flex;gap:10px;flex-wrap:wrap}
+
+/* ---------- footer ---------- */
+.foot{
+  background:var(--court);color:rgba(255,255,255,.5);
+  text-align:center;padding:28px 20px;
+  font-family:var(--display);
+  font-size:.7rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;
+}
+.foot strong{display:block;color:#fff;font-weight:800;font-stretch:112%;margin-bottom:6px;letter-spacing:.14em}
+
+/* ---------- responsive ---------- */
+@media (max-width:640px){
+  .level{grid-template-columns:1fr}
+  .level .badge{
+    flex-direction:row;align-items:baseline;justify-content:flex-start;gap:12px;
+    padding:16px 20px;
+  }
+  .level .badge .num{font-size:2rem}
+  .level .badge .name{margin-top:0}
+  .level .body{padding:18px 20px}
+  .result-hero,.result-body{padding-left:22px;padding-right:22px}
+  .q{padding:24px 20px}
+  .closing{padding:26px 22px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms!important;
+    transition-duration:.01ms!important;
+  }
+}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="brand">
+      <h1>Dopamine <em>Tennis</em></h1>
+      <span class="tagline">Play · Connect · Develop</span>
+    </div>
+    <nav class="tabs" role="tablist" aria-label="페이지">
+      <button class="tab" role="tab" data-page="guide"   aria-selected="true">NTRP 기준</button>
+      <button class="tab" role="tab" data-page="ntrp"    aria-selected="false">한눈에 보기</button>
+      <button class="tab" role="tab" data-page="manners" aria-selected="false">테니스 매너</button>
+      <button class="tab" role="tab" data-page="check"   aria-selected="false">내 NTRP는?</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ═══════════ 1. NTRP 기준 ═══════════ -->
+<section class="page is-active" id="page-guide" role="tabpanel" aria-label="NTRP 기준">
+  <div class="wrap">
+    <p class="eyebrow">Self check</p>
+    <h2 class="title">도파민 NTRP 기준 안내</h2>
+    <p class="lede">
+      NTRP는 테니스 실력을 1.0~7.0 단계로 구분하는 기준입니다.
+      도파민에서는 일정 참여 시 참고할 수 있도록 아래와 같이 간단한 셀프 체크 기준을 안내드립니다.
+    </p>
+    <p class="note">
+      NTRP는 절대적인 실력 평가가 아닌, 참여 수준을 맞추기 위한 참고 지표로 활용해주세요.
+    </p>
+
+    <h3 class="section">단계별 기준</h3>
+    <div class="levels" id="levels"></div>
+
+    <h3 class="section">한눈에 보는 도파민 NTRP</h3>
+    <div class="ladder" id="ladder"></div>
+
+    <h3 class="section">내 NTRP가 헷갈린다면?</h3>
+    <div class="checks">
+      <div class="check"><span class="k">1</span><span>랠리가 가능한가?</span></div>
+      <div class="check"><span class="k">2</span><span>서브로 게임을 시작할 수 있는가?</span></div>
+      <div class="check"><span class="k">3</span><span>점수를 알고 스스로 게임 진행이 가능한가?</span></div>
+      <div class="check"><span class="k">4</span><span>복식 포지션을 이해하고 있는가?</span></div>
+      <div class="check"><span class="k">5</span><span>단순히 넘기는 것을 넘어 방향·코스를 조절할 수 있는가?</span></div>
+    </div>
+    <p class="lede">이 5가지를 기준으로 가장 가까운 단계를 선택해주세요.</p>
+    <button class="btn" data-goto="check"><span class="dot"></span>내 NTRP 확인하기</button>
+
+    <div class="closing">
+      <p class="lead">도파민에서는 NTRP가 높고 낮음보다, 서로 비슷한 수준과 목적의 멤버들이 즐겁게 운동할 수 있도록 하는 참고 기준으로 활용합니다.</p>
+      <p>처음부터 정확할 필요는 없습니다. 실력이 늘면 NTRP도 함께 조정해주세요.</p>
+      <p class="sign">각자의 속도로, 함께 즐기고 성장하는 도파민 🎾</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 2. 한눈에 보기 ═══════════ -->
+<section class="page" id="page-ntrp" role="tabpanel" aria-label="한눈에 보기" hidden>
+  <div class="wrap">
+    <p class="eyebrow">Notice</p>
+    <h2 class="title">한눈에 보는 도파민 NTRP</h2>
+    <p class="lede">1.0부터 3.5까지 단계별 기준을 한 장으로 정리한 공지입니다.</p>
+    <figure class="poster">
+      <img src="assets/ntrp.png" alt="도파민 NTRP 기준 안내 인포그래픽. 1.0 완전 입문부터 3.5 중급까지 6단계의 셀프 체크 항목과 한눈에 보는 단계 요약, 내 NTRP가 헷갈린다면 확인할 5가지 질문을 담고 있습니다.">
+      <figcaption class="poster-foot">
+        <span>도파민 NTRP 기준 안내</span>
+        <a href="assets/ntrp.png" target="_blank" rel="noopener">원본 크기로 보기</a>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ═══════════ 3. 테니스 매너 ═══════════ -->
+<section class="page" id="page-manners" role="tabpanel" aria-label="테니스 매너" hidden>
+  <div class="wrap">
+    <p class="eyebrow">Notice</p>
+    <h2 class="title">도파민 테니스 매너</h2>
+    <p class="lede">판정은 보수적으로, 태도는 관대하게. 시간·복장·코트 이용부터 경기 종료 후 인사까지 모아둔 공지입니다.</p>
+    <figure class="poster">
+      <img src="assets/manners.png" alt="도파민 테니스 매너 인포그래픽. 시간 매너, 복장과 준비물, 코트 이용 매너, 경기 중 매너, 플레이 매너, 경기 종료 후 인사 등 여섯 가지 항목을 담고 있습니다.">
+      <figcaption class="poster-foot">
+        <span>매너, 이것만 알고 가도 절반 이상은 성공!</span>
+        <a href="assets/manners.png" target="_blank" rel="noopener">원본 크기로 보기</a>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ═══════════ 4. 내 NTRP는? ═══════════ -->
+<section class="page" id="page-check" role="tabpanel" aria-label="내 NTRP는?" hidden>
+  <div class="wrap">
+    <p class="eyebrow">Rally · 5 questions</p>
+    <h2 class="title">내 NTRP는?</h2>
+    <p class="lede">5개 질문에 지금의 나와 가장 가까운 답을 고르면 참고 단계를 안내해드려요. 1분이면 충분합니다.</p>
+
+    <div class="rally">
+      <div class="rally-head">
+        <span>Question <strong id="qNow">1</strong> / 5</span>
+        <span id="qState">Rally</span>
+      </div>
+      <div class="track">
+        <div class="baseline"></div>
+        <div class="fill" id="fill"></div>
+        <div class="net"></div>
+        <div class="ball" id="ball"></div>
+      </div>
+    </div>
+
+    <div id="quizArea"></div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <strong>Dopamine Tennis</strong>
+  Play · Connect · Develop
+</footer>
+
+<script>
+(function(){
+  'use strict';
+
+  /* ---------- data: 시트 원문 그대로 ---------- */
+  var LEVELS = [
+    { v:'1.0', name:'완전 입문', color:'var(--lv10)', short:'이제 막 시작',
+      items:['테니스를 처음 시작한 단계','포핸드·백핸드 기본 자세를 배우는 중','아직 랠리나 게임 진행이 어려움'],
+      quote:'이제 막 라켓 잡았어요!' },
+    { v:'1.5', name:'테린이', color:'var(--lv15)', short:'기본기 연습 / 짧은 랠리',
+      items:['포핸드·백핸드로 공을 넘길 수 있음','짧은 랠리는 가능하지만 실수가 많음','서브와 게임 규칙을 배우는 단계','아직 게임을 혼자 진행하기는 어려움'],
+      quote:'공은 넘길 수 있는데 게임은 아직 어려워요!' },
+    { v:'2.0', name:'게임 입문', color:'var(--lv20)', short:'게임 입문 / 기본 게임 가능',
+      items:['기본적인 포핸드·백핸드 랠리 가능','느린 공은 어느 정도 받아칠 수 있음','언더서브 또는 일반 서브로 게임 시작 가능','점수 계산과 기본적인 게임 진행 가능','경기 중 실수가 많고 랠리가 자주 끊김'],
+      quote:'게임은 할 수 있어요! 아직 실수가 많아요.' },
+    { v:'2.5', name:'초급', color:'var(--lv25)', short:'복식 게임 가능 / 랠리 안정도 ↑',
+      items:['포핸드 랠리가 비교적 안정적','백핸드·발리·서브도 어느 정도 사용 가능','복식 기본 위치와 움직임을 이해함','게임 중 어느 정도 랠리를 이어갈 수 있음','방향 조절은 가능하지만 안정성은 부족함'],
+      quote:'게임 흐름을 알고 복식 게임을 즐길 수 있어요!' },
+    { v:'3.0', name:'초중급', color:'var(--lv30)', short:'안정적인 게임 + 기본 전술',
+      items:['포핸드·백핸드 스트로크가 비교적 안정적','서브를 넣고 게임을 안정적으로 시작할 수 있음','발리 및 네트 플레이 가능','복식 포지션과 기본적인 전술을 이해함','단순히 넘기는 것을 넘어 코스와 방향을 생각하며 플레이'],
+      quote:'안정적인 게임 진행 + 기본적인 전술 플레이가 가능해요!' },
+    { v:'3.5', name:'중급', color:'var(--lv35)', short:'안정적인 경기 운영 + 전술 활용',
+      items:['스트로크의 방향·깊이를 어느 정도 조절 가능','서브의 방향과 강약을 활용할 수 있음','네트 플레이와 발리가 안정적','상대의 약점과 상황을 보고 플레이 가능','복식에서 포지셔닝과 전술 활용이 자연스러움'],
+      quote:'게임 운영과 전술까지 생각하면서 플레이해요!' }
+  ];
+
+  var QUESTIONS = [
+    { q:'랠리가 가능한가요?', a:[
+      '아직 공을 넘기는 것이 어려워요',
+      '짧은 랠리는 되지만 실수가 많아요',
+      '랠리를 어느 정도 안정적으로 이어갈 수 있어요' ] },
+    { q:'서브로 게임을 시작할 수 있나요?', a:[
+      '서브를 배우는 중이에요',
+      '언더서브나 약한 서브로 시작할 수 있어요',
+      '서브의 방향과 강약을 활용할 수 있어요' ] },
+    { q:'점수를 알고 스스로 게임을 진행할 수 있나요?', a:[
+      '게임 규칙을 배우는 중이에요',
+      '점수 계산은 되지만 혼자 진행하기는 어려워요',
+      '점수를 알고 스스로 게임을 진행할 수 있어요' ] },
+    { q:'복식 포지션을 이해하고 있나요?', a:[
+      '어디에 서야 할지 아직 잘 모르겠어요',
+      '복식 기본 위치와 움직임은 이해하고 있어요',
+      '상황에 따라 포지셔닝과 전술을 활용해요' ] },
+    { q:'방향과 코스를 조절할 수 있나요?', a:[
+      '공을 넘기는 데 집중하고 있어요',
+      '방향 조절은 되지만 안정성이 부족해요',
+      '코스·깊이를 생각하고 상대의 약점을 보며 쳐요' ] }
+  ];
+
+  /* 0~10점 → 6단계 */
+  function levelFor(score){
+    return LEVELS[Math.min(5, Math.floor(score / 2))];
+  }
+
+  var $ = function(s){ return document.querySelector(s); };
+
+  /* ---------- render: 단계별 카드 ---------- */
+  var levelsEl = $('#levels');
+  LEVELS.forEach(function(lv){
+    var el = document.createElement('article');
+    el.className = 'level';
+    el.style.setProperty('--lv', lv.color);
+    el.innerHTML =
+      '<div class="badge"><div class="num">' + lv.v + '</div><div class="name">' + lv.name + '</div></div>' +
+      '<div class="body"><ul>' +
+        lv.items.map(function(t){ return '<li>' + t + '</li>'; }).join('') +
+      '</ul><p class="quote">“' + lv.quote + '”</p></div>';
+    levelsEl.appendChild(el);
+  });
+
+  /* ---------- render: 한눈에 보는 ladder ---------- */
+  var ladderEl = $('#ladder');
+  LEVELS.forEach(function(lv){
+    var el = document.createElement('div');
+    el.className = 'rung';
+    el.style.setProperty('--lv', lv.color);
+    el.innerHTML = '<div class="n">' + lv.v + '</div><div class="t">' + lv.short + '</div>';
+    ladderEl.appendChild(el);
+  });
+
+  /* ---------- tabs ---------- */
+  var PAGES = ['guide','ntrp','manners','check'];
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
+
+  function show(name, push){
+    if (PAGES.indexOf(name) < 0) name = 'guide';
+    tabs.forEach(function(t){
+      t.setAttribute('aria-selected', String(t.dataset.page === name));
+    });
+    PAGES.forEach(function(p){
+      var sec = document.getElementById('page-' + p);
+      var on = (p === name);
+      sec.classList.toggle('is-active', on);
+      sec.hidden = !on;
+    });
+    if (push && location.hash !== '#' + name) history.pushState(null, '', '#' + name);
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  }
+
+  tabs.forEach(function(t){
+    t.addEventListener('click', function(){ show(t.dataset.page, true); });
+  });
+  document.querySelectorAll('[data-goto]').forEach(function(b){
+    b.addEventListener('click', function(){ show(b.dataset.goto, true); });
+  });
+  window.addEventListener('hashchange', function(){ show(location.hash.slice(1), false); });
+
+  /* ---------- quiz ---------- */
+  var area = $('#quizArea'), ball = $('#ball'), fill = $('#fill');
+  var qNow = $('#qNow'), qState = $('#qState');
+  var answers = [];
+
+  function updateRally(){
+    var i = answers.length;
+    var pct = (i / QUESTIONS.length) * 100;
+    ball.style.left = pct + '%';
+    fill.style.width = pct + '%';
+    qNow.textContent = Math.min(i + 1, QUESTIONS.length);
+    qState.textContent = (i >= QUESTIONS.length) ? 'Game' : 'Rally';
+  }
+
+  function renderQuestion(){
+    var i = answers.length;
+    var item = QUESTIONS[i];
+    var box = document.createElement('div');
+    box.className = 'q';
+    box.innerHTML =
+      '<h3>' + item.q + '</h3><div class="opts">' +
+      item.a.map(function(t, w){
+        return '<button class="opt" data-w="' + w + '"><span class="mark"></span><span>' + t + '</span></button>';
+      }).join('') +
+      '</div><div class="q-foot"><button class="link-back" id="back"' + (i === 0 ? ' hidden' : '') + '>← 이전 질문</button></div>';
+
+    area.innerHTML = '';
+    area.appendChild(box);
+    updateRally();
+
+    box.querySelectorAll('.opt').forEach(function(b){
+      b.addEventListener('click', function(){
+        answers.push(Number(b.dataset.w));
+        (answers.length >= QUESTIONS.length ? renderResult : renderQuestion)();
+      });
+    });
+    var back = box.querySelector('#back');
+    if (back) back.addEventListener('click', function(){ answers.pop(); renderQuestion(); });
+  }
+
+  function renderResult(){
+    var score = answers.reduce(function(a, b){ return a + b; }, 0);
+    var lv = levelFor(score);
+    updateRally();
+
+    var box = document.createElement('div');
+    box.className = 'result';
+    box.style.setProperty('--lv', lv.color);
+    box.innerHTML =
+      '<div class="result-hero">' +
+        '<div class="cap">Your NTRP</div>' +
+        '<div class="num">' + lv.v + '</div>' +
+        '<div class="name">' + lv.name + '</div>' +
+      '</div>' +
+      '<div class="result-body">' +
+        '<p class="result-quote">“' + lv.quote + '”</p>' +
+        '<ul>' + lv.items.map(function(t){ return '<li>' + t + '</li>'; }).join('') + '</ul>' +
+        '<p class="note">NTRP는 절대적인 실력 평가가 아닌, 참여 수준을 맞추기 위한 참고 지표입니다. 실력이 늘면 NTRP도 함께 조정해주세요.</p>' +
+        '<div class="result-actions">' +
+          '<button class="btn" id="again"><span class="dot"></span>다시 확인하기</button>' +
+          '<button class="btn ghost" data-goto="guide">전체 단계 보기</button>' +
+        '</div>' +
+      '</div>';
+
+    area.innerHTML = '';
+    area.appendChild(box);
+
+    box.querySelector('#again').addEventListener('click', function(){
+      answers = [];
+      renderQuestion();
+    });
+    box.querySelector('[data-goto]').addEventListener('click', function(){ show('guide', true); });
+  }
+
+  renderQuestion();
+  show(location.hash.slice(1) || 'guide', false);
+})();
+</script>
+</body>
+</html>
